@@ -55,4 +55,3 @@ Expected behavior:
 1. Create table structure to store the assigned users
 2. Create endpoint(s) to interact with new table structure
 3. Hook up endpoint(s) to the frontend so when a user is selected, they are correctly assigned to that procedure
-4. We also want to be able to remove a user and persist that information after refreshing the page.

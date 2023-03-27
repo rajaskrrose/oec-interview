@@ -5,7 +5,7 @@ const PlanProcedureItem = ({ procedure, users }) => {
     const [selectedUsers, setSelectedUsers] = useState(null);
 
     const handleAssignUserToProcedure = (e) => {
-        setSelectedUsers(e.value);
+        setSelectedUsers(e);
         // TODO: Remove console.log and add missing logic
         console.log(e);
     };
