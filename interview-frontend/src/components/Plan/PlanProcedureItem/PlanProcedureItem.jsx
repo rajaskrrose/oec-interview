@@ -2,28 +2,18 @@ import React, { useState } from "react";
 import ReactSelect from "react-select";
 
 const PlanProcedureItem = ({ procedure, users }) => {
-    const [selectedUser, setSelectedUser] = useState(null);
+    const [selectedUsers, setSelectedUsers] = useState(null);
 
-    const assignUserToProcedure = (e) => {
-        setSelectedUser(e.value);
+    const handleAssignUserToProcedure = (e) => {
+        setSelectedUsers(e.value);
+        // TODO: Remove console.log and add missing logic
+        console.log(e);
     };
 
     return (
         <div className="py-2">
-            <div className="form-check">
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="procedureCheckbox"
-                    checked={true}
-                    onChange={() =>
-                        console.log("Remove procedure from plan not built")
-                    }
-                ></input>
-                <label className="form-check-label" htmlFor="procedureCheckbox">
-                    {procedure.ProcedureTitle}
-                </label>
+            <div>
+                {procedure.procedureTitle}
             </div>
 
             <ReactSelect
@@ -31,8 +21,8 @@ const PlanProcedureItem = ({ procedure, users }) => {
                 placeholder="Select User to Assign"
                 isMulti={true}
                 options={users}
-                value={selectedUser}
-                onChange={(e) => assignUserToProcedure(e)}
+                value={selectedUsers}
+                onChange={(e) => handleAssignUserToProcedure(e)}
             />
         </div>
     );

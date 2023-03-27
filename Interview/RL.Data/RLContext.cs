@@ -17,11 +17,11 @@ public class RLContext : DbContext
     {
         base.OnModelCreating(builder);
 
-        builder.Entity<PlanProcedure>(pp =>
+        builder.Entity<PlanProcedure>(typeBuilder =>
         {
-            pp.HasKey(pp => new { pp.PlanId, pp.ProcedureId });
-            pp.HasOne(pp => pp.Plan).WithMany(p => p.PlanProcedures);
-            pp.HasOne(PP => PP.Procedure).WithMany();
+            typeBuilder.HasKey(pp => new { pp.PlanId, pp.ProcedureId });
+            typeBuilder.HasOne(pp => pp.Plan).WithMany(p => p.PlanProcedures);
+            typeBuilder.HasOne(pp => pp.Procedure).WithMany();
         });
 
         //Add procedure Seed Data
